@@ -51,4 +51,3 @@ def run_parallel(commands: list[str], cwd: Path, max_workers: int = 2) -> dict:
             for r in results
         ],
     }
-

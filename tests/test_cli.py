@@ -18,4 +18,3 @@ def test_cli_strict_fails(tmp_path: Path):
     commands.write_text("python3 -c 'import sys; sys.exit(1)'\n", encoding="utf-8")
     code = main(["--commands-file", str(commands), "--strict"])
     assert code == 1
-
