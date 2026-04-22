@@ -1,5 +1,7 @@
 # parallel-task-runner
 
+![CI](https://github.com/Amnesiacman/parallel-task-runner/actions/workflows/ci.yml/badge.svg)
+
 `parallel-task-runner` выполняет список shell-команд параллельно и строит единый отчёт.
 
 ## Что умеет v0.1
