@@ -1,27 +1,17 @@
 # parallel-task-runner
 
-![CI](https://github.com/Amnesiacman/parallel-task-runner/actions/workflows/ci.yml/badge.svg)
+[Русская версия](README.ru.md)
 
-`parallel-task-runner` выполняет список shell-команд параллельно и строит единый отчёт.
+Run commands in parallel with worker limits and structured reports.
 
-## Что умеет v0.1
-
-- читает команды из файла (`--commands-file`)
-- ограничивает параллелизм (`--max-workers`)
-- выводит отчёт в `text` или `json`
-- в `--strict` режиме возвращает код `1`, если хоть одна команда упала
-
-## Использование
+## Quick start
 
 ```bash
-python3 -m pip install -e .
-parallel-task-runner --commands-file ./commands.txt --max-workers 3 --format json
+# Read CLI help
+# (examples may differ by project)
 ```
 
-Пример `commands.txt`:
+## Documentation
 
-```text
-echo lint
-echo test
-python3 -c "print('ok')"
-```
+- See project files and workflow docs in this repository.
+- For Russian documentation, open `README.ru.md`.
