@@ -2,7 +2,21 @@
 name = "parallel-task-runner"
 version = "0.1.0"
 requires-python = ">=3.10"
+description = "Run shell commands in parallel with structured reports"
+
+[project.scripts]
+parallel-task-runner = "parallel_task_runner.cli:main"
 
 [build-system]
 requires = ["setuptools>=69", "wheel"]
 build-backend = "setuptools.build_meta"
+
+[tool.setuptools]
+package-dir = {"" = "src"}
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.pytest.ini_options]
+pythonpath = ["src"]
+addopts = "-q"

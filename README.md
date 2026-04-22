@@ -1,22 +1,25 @@
 # parallel-task-runner
 
-Run commands in parallel with retries, limits, and JSON reports.
+`parallel-task-runner` выполняет список shell-команд параллельно и строит единый отчёт.
 
-## MVP status
+## Что умеет v0.1
 
-- Basic CLI scaffold is ready (`main.py`).
-- Supports `--format text|json` and `--dry-run`.
-- Intended as a foundation for iterative feature work.
+- читает команды из файла (`--commands-file`)
+- ограничивает параллелизм (`--max-workers`)
+- выводит отчёт в `text` или `json`
+- в `--strict` режиме возвращает код `1`, если хоть одна команда упала
 
-## Quick start
+## Использование
 
 ```bash
-python3 main.py --help
-python3 main.py --format json --dry-run
+python3 -m pip install -e .
+parallel-task-runner --commands-file ./commands.txt --max-workers 3 --format json
 ```
 
-## Next steps
+Пример `commands.txt`:
 
-1. Add domain-specific command set and config file support.
-2. Add tests and GitHub Actions workflow.
-3. Package and publish first tagged release.
+```text
+echo lint
+echo test
+python3 -c "print('ok')"
+```
