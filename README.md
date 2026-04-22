@@ -2,16 +2,27 @@
 
 [Русская версия](README.ru.md)
 
-Run commands in parallel with worker limits and structured reports.
+Run shell commands in parallel and collect deterministic reports.
 
-## Quick start
+## Features
+
+- commands from file
+- worker limit (`--max-workers`)
+- `text`/`json` output
+- strict mode for CI (`--strict`)
+
+## Usage
 
 ```bash
-# Read CLI help
-# (examples may differ by project)
+python3 main.py --commands-file ./commands.txt --max-workers 3
+python3 main.py --commands-file ./commands.txt --format json
+python3 main.py --commands-file ./commands.txt --strict
 ```
 
-## Documentation
+Example `commands.txt`:
 
-- See project files and workflow docs in this repository.
-- For Russian documentation, open `README.ru.md`.
+```text
+echo lint
+echo test
+python3 -c "print('ok')"
+```

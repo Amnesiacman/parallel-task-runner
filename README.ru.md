@@ -2,16 +2,27 @@
 
 [English version](README.md)
 
-Параллельный запуск команд с лимитом воркеров и структурированным отчётом.
+Параллельный запуск shell-команд с единым отчётом.
 
-## Быстрый старт
+## Возможности
+
+- чтение команд из файла
+- ограничение воркеров (`--max-workers`)
+- вывод в `text`/`json`
+- strict-режим для CI (`--strict`)
+
+## Использование
 
 ```bash
-# Посмотрите справку CLI
-# (конкретные команды зависят от проекта)
+python3 main.py --commands-file ./commands.txt --max-workers 3
+python3 main.py --commands-file ./commands.txt --format json
+python3 main.py --commands-file ./commands.txt --strict
 ```
 
-## Документация
+Пример `commands.txt`:
 
-- Детали смотрите в файлах проекта и workflow-конфигурациях в этом репозитории.
-- Для англоязычной документации откройте `README.md`.
+```text
+echo lint
+echo test
+python3 -c "print('ok')"
+```
